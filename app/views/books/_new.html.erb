@@ -1,0 +1,42 @@
+<!--user情報-->
+
+<div>
+  <h1>User info</h1>
+  <%= image_tag @user.get_profile_image(100,100) %>
+  <h3>name <%= @user.name %></h3>
+  <p>introduction <%= @user.introduction %></p>
+  <br>
+  <% if @user == current_user %>
+    <p><%= link_to "User info", edit_user_path %></p>
+  <% end %>
+</div>
+
+<% @books.each do |book| %>
+<div>
+  <%= link_to book_path(book.id) do %>
+    <%= image_tag book.get_image %>
+  <% end %>
+  <p><!--ユーザ画像が入ります--><%= image_tag book.user.get_profile_image(100,100) %></p>
+  <p>Title<br><%= book.title %></p>
+  <p>Opinion<br><%= book.body %></p>
+  <p><!--ユーザーネーム--><%= book.user.name %></p>
+</div>
+<% end %>
+
+
+
+
+
+
+
+
+<!--新規投稿投稿フォーム-->
+<h1>New book</h1>
+<%= form_with model: @book do |f| %>
+
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  <h4>Opinion</h4>
+  <%= f.text_area :body %>
+  <%= f.submit 'Create Book' %>
+<% end %>
