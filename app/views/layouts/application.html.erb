@@ -12,8 +12,8 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
-
-  <body class="d-flex flex-column vh-100">
+<body>
+  <div class="d-flex flex-column vh-100">
     <header class="shadow-sm bg-dark">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
@@ -56,15 +56,19 @@
           </div>
         </div>
       </nav>
+
     </header>
 
           <%= yield %>
-    <footer>
 
-      <p class="text-center">CopyRight Infratop.inc</p>
+  </div>
 
-    </footer>
+   <footer>
+
+      <div class="text-center">CopyRight Infratop.inc</p></div>
+
+  </footer>
 
 
-        </body>
-      </html>
+</body>
+</html>

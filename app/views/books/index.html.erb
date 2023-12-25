@@ -1,13 +1,41 @@
-<% @books.each do |book| %>
-  <div>
-    <%= link_to book_path(book.id) do %>
-      <p><!--ユーザ画像--><%= image_tag book.user.get_profile_image(100,100) %></p>
-    <% end %>
+<div class="main container mt-3">
+  <div class="row justify-content-center d-flex">
+    <div class="col-sm-3">
 
-    <p>Title<br><%= book.title %></p>
-    <p>Opinion<br><%= book.body %></p>
-    <p><%= book.user.name %></p>
+      <%= render 'users/show', user: @user %>
+
+      <%= render 'books/new' %>
+
+    </div>
+    <div class="col-sm-9">
+      <h2>Books</h2>
+      <table class="table">
+        <thead>
+
+          <tr class"row">
+            <th class="col-md-2 col-sm-2"></th>
+            <th class="col-md-4 col-sm-4">Title</th>
+            <th class="col-md-6 col-sm-6">Opinion</th>
+          </tr>
+        </thead>
+        <tbody>
+           <% @books.each do |book| %>
+           <%= link_to book_path(book.id) do %>
+
+           <% end %>
+
+
+          <tr>
+            <th><%= image_tag book.user.get_profile_image(100,100) %></th>
+            <th><%= book.title %></th>
+            <th><%= book.body %></th>
+          </tr>
+
+
+          <% end %>
+        </tbody>
+
+
+    </div>
   </div>
-<% end %>
-<%= render 'users/show', user: @user %>
-<%= render 'books/new' %>
+</div>
