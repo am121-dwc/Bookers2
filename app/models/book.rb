@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-  has_one_attached :image
+  has_one_attached :image #--原因？--
   belongs_to :user
 
 
@@ -11,4 +11,5 @@ class Book < ApplicationRecord
     end
     image
   end
+
 end
