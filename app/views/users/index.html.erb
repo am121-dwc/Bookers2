@@ -1,0 +1,50 @@
+<div class="main container mt-3">
+  <div class="row justify-content-center d-flex">
+    <div class="col-sm-3">
+
+      <%= render 'users/show', user: @user %>
+
+      <%= render 'books/new' %>
+
+    </div>
+    <div class="col-sm-9">
+      <h2>Books</h2>
+      <table class="table">
+        <thead>
+
+          <tr class"row">
+            <th class="col-md-3 col-sm-3">image</th>
+            <th class="col-md-5 col-sm-5">name</th>
+            <th class="col-md-4 col-sm-4"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+           <% @users.each do |user| %>
+
+          <tr>
+
+
+
+            <th>
+            <%= image_tag user.get_profile_image(100,100) %>
+            </th>
+            <th>
+              <%= user.name %>
+            </th>
+            <th>
+              <%= link_to user_path(user.id) do %>
+              Show
+              <% end %>
+            </th>
+          </tr>
+
+
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
