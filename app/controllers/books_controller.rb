@@ -5,6 +5,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @user = current_user
   end
 
   def index
@@ -21,7 +22,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     @book.update(book_params)
-    redirect_to book_path
+    redirect_to book_path(@book.id)
 
   end
 
@@ -44,7 +45,7 @@ class BooksController < ApplicationController
 
   private
   def book_params
-    params.permit(:title, :body, :introduction)
+    params.require(:book).permit(:title, :body)
 
   end
 
