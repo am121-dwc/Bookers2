@@ -25,11 +25,16 @@
 
           <tr>
             <th>
+              <%= link_to @book.user do %>
               <%= image_tag @user.get_profile_image(100,100) %><br>
               <%= @user.name %>
+              <% end %>
             </th>
             <th>
+              <%= link_to @book do %>
               <%= @book.title %>
+              <% end %>
+
             </th>
             <th>
               <%= @book.body %>

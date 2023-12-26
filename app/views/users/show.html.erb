@@ -34,7 +34,9 @@
 
 
               <th>
+              <%= link_to book.user do %>
               <%= image_tag book.user.get_profile_image(100,100) %>
+              <% end %>
               </th>
               <th>
                 <%= link_to book_path(book.id) do %>
