@@ -2,7 +2,10 @@ class Book < ApplicationRecord
   has_one_attached :image #--原因？--
   belongs_to :user
 
-
+ validates :title,
+ presence: true
+ validates :body,
+ presence: true
 
   def get_image
     unless image.attached?
