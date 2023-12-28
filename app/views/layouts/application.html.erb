@@ -14,6 +14,7 @@
 
   </head>
 <body>
+
   <div class="d-flex flex-column mh-80">
     <header class="shadow-sm bg-dark">
       <nav class="navbar navbar-expand-lg navbar-light">
@@ -59,7 +60,9 @@
       </nav>
 
     </header>
-
+     <% flash.each do |message_type, message| %>
+       <div class="flash-message <%= message_type %>"><%= message %></div>
+     <% end %>
           <%= yield %>
 
   </div>

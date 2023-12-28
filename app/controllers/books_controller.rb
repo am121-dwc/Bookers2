@@ -38,9 +38,11 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     if @book.save
+      flash[:notice] = "Create book is successfully."
       redirect_to book_path(@book)
     else
-      render :new
+       flash[:alert] = "error. Book was not created. Title and body can't be blank.Opinion can be up to 200 characters."
+      redirect_to '/books'
     end
 
   end
