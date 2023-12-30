@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :is_matching_login_user, only: [:edit, :update]
   def new
     @book = Book.new
   end
@@ -21,8 +22,12 @@ class BooksController < ApplicationController
   end
   def update
     @book = Book.find(params[:id])
-    @book.update(book_params)
-    redirect_to book_path(@book.id)
+    if @book.update(book_params)
+      flash[:notice] = "Book updated is successfully."
+      redirect_to book_path(@book.id)
+    else
+      flash[:alert] = "Book update error."
+    end
 
   end
 
@@ -41,7 +46,7 @@ class BooksController < ApplicationController
       flash[:notice] = "Create book is successfully."
       redirect_to book_path(@book)
     else
-       flash[:alert] = "error. Book was not created. Title and body can't be blank.Opinion can be up to 200 characters."
+      flash[:alert] = "error. Title and body can't be blank. Opinion can be up to 200 characters."
       redirect_to '/books'
     end
 
@@ -53,7 +58,12 @@ class BooksController < ApplicationController
     params.require(:book).permit(:title, :body)
 
   end
-
+  def is_matching_login_user
+    user = User.find(params[:id])
+    unless user.id == current_user.id
+      redirect_to books_path
+    end
+  end
 
 
 end
