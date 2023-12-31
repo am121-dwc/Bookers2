@@ -5,6 +5,6 @@
   <p>introduction <%= user.introduction %></p>
   <br>
   <% if user == current_user %>
-    <p><%= link_to "User info", edit_user_path(user) %></p>
+    <button class="b-size"><i class="fa-solid fa-user-gear fas_button_borderradius"><% link_to edit_user_path(user) %></i></button> <!--cssにてサイズ変更-->
   <% end %>
 </div>

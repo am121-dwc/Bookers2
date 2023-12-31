@@ -9,7 +9,7 @@
     </div>
     <div class="col-md-8 offset-md-1">
       <h2>Books</h2>
-      <table class="table">
+      <table class="table-hover">
         <thead>
 
           <tr class"row">
@@ -27,7 +27,7 @@
 
 
 
-            <th>
+            <th class="p-2">
               <%= link_to book.user do %>
               <%= image_tag book.user.get_profile_image(100,100) %>
               <% end %>
