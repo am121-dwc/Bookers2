@@ -26,7 +26,7 @@ class BooksController < ApplicationController
       flash[:notice] = "Book updated is successfully."
       redirect_to book_path(@book.id)
     else
-      flash[:alert] = "Book update error."
+      flash[:alert] = "update error. title and body can't be blank. opinion can be up to 200 characters."
     end
 
   end

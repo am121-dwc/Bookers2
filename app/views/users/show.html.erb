@@ -8,8 +8,13 @@
       <p>introduction <%= @user.introduction %></p>
       <br>
       <% if @user == current_user %>
-        <p><%= link_to "User info", edit_user_path %></p>
-      <% end %>
+         <%= link_to edit_user_path(@user) do %>
+      <button class="b-size">
+        <i class="fa-solid fa-user-gear fas_button_borderradius text-dark"></i>
+        <% end %>
+      </button>
+
+        <% end %>
       <%= render 'books/new', book: @book %>
     </div>
     <div class="col-sm-9">

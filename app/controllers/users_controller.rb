@@ -11,10 +11,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = "Profile updated successfully."
+      flash[:notice] = "successfully. profile updated."
       redirect_to user_path(@user.id)
     else
-      flash[:alert] = "Profile update error."
+      flash[:alert] = "profile update error."
       redirect_to user_path(@user.id) #--要確認--
     end
 
