@@ -5,7 +5,7 @@
   <p>introduction <%= user.introduction %></p>
   <br>
   <% if user == current_user %>
-    <%= link_to edit_user_path(user) do %>
+    <%= link_to edit_user_path(@user) do %>
       <button class="b-size">
         <i class="fa-solid fa-user-gear fas_button_borderradius text-dark"></i>
         <% end %>
