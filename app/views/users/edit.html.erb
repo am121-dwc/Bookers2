@@ -1,17 +1,26 @@
 <div class="container mt-5">
-  <div vlass="row">
+  <div class="row">
     <div class="col-2"></div>
     <div class="col-8">
-      <h1>User info</h1>
+      <h2>User info</h2>
       <%= form_with model: @user do |f| %>
-      <label for="inputName">Name</label><br>
-      <%= f.text_field :name, autofocus: true, id:"inputName" %><br>
+      <p>Name</p><br>
+      <div class="input-group input-group-sm mb-3"><%= f.text_field :name, autofocus: true, id:"inputName" %></div>
       <label for="inputImage">Image</label><br>
       <%= f.file_field :profile_image, placeholder: "ファイルを選択", accept: "image/*" %><br>
       <label for="inputIntroduction">Introduction<br><%= f.text_field :introduction, autofocus:true, id:"inputIntroduction" %></label>
       <br>
       <%= f.submit "Update User" %>
       <% end %>
+
+
+
+
+
+
+
+
+
     </div>
     <div class="col-2"></div>
   </div>
