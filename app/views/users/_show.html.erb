@@ -1,16 +1,14 @@
-<div>
-  <h2>User info</h2>
-  <%= image_tag user.get_profile_image(100,100) %>
-  <h3>name <%= user.name %></h3>
-  <p>introduction <%= user.introduction %></p>
-  <br>
+<h2>User info</h2>
 
-      <% if user == current_user %>
-      <%= link_to edit_user_path(@user), class: "text-dark" do %>
-      <button class="form-control fas_button_borderradius btn-block">
+        <%= image_tag user.get_profile_image(100,100) %>
+        <br>
+        <>
+       
 
-        <i class="fa-solid fa-user-gear"></i>
-      </button>
-      <% end %>
-      <% end %>
-</div>
+        <% if user == current_user %>
+        <%= link_to edit_user_path(@user), class: "text-dark" do %>
+        <button class="form-control fas_button_borderradius btn-block">
+          <i class="fa-solid fa-user-gear"></i>
+        </button>
+        <% end %>
+        <% end %>

@@ -1,6 +1,6 @@
 <div class="main container mt-3">
   <div class="row justify-content-center d-flex">
-    <div class="col-sm-3">
+    <div class="col-md-3">
 
       <h2>User info</h2>
       <%= image_tag @user.get_profile_image(100,100) %>
@@ -16,7 +16,7 @@
       <% end %>
       <%= render 'books/new', book: @book %>
     </div>
-    <div class="col-sm-9">
+    <div class="col-md-8 offset-md-1">
       <h2>Books</h2>
       <div class="row">
         <table class="table">

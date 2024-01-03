@@ -8,42 +8,46 @@
 
     </div>
     <div class="col-md-8 offset-md-1">
-      <h2>Books</h2>
-      <table class="table">
-        <thead>
 
-          <tr class"row">
-            <th class="col-md-3 col-sm-3">image</th>
-            <th class="col-md-5 col-sm-5">name</th>
-            <th class="col-md-4 col-sm-4"></th>
-          </tr>
-        </thead>
-        <tbody>
+        <h2>Books</h2>
+        <table class="table">
 
+            <thead>
 
-           <% @users.each do |user| %>
+              <tr>
+                <th>image</th>
+                <th>name</th>
+                <th></th>
+              </tr>
 
-          <tr>
+            </thead>
+            <tbody>
 
 
+                <% @users.each do |user| %>
 
-            <th class="p-2">
-            <%= image_tag user.get_profile_image(100,100) %>
-            </th>
-            <th>
-              <%= user.name %>
-            </th>
-            <th>
-              <%= link_to user_path(user.id) do %>
-              Show
+              <tr>
+
+
+
+                <th class="p-2">
+                  <%= image_tag user.get_profile_image(100,100) %>
+                </th>
+                <th>
+                  <%= user.name %>
+                </th>
+                <th>
+                  <%= link_to user_path(user.id) do %>
+                  Show
+                  <% end %>
+                </th>
+              </tr>
+
+
               <% end %>
-            </th>
-          </tr>
+            </tbody>
 
-
-          <% end %>
-        </tbody>
-      </table>
+        </table>
 
     </div>
   </div>
