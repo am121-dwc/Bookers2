@@ -4,12 +4,13 @@
   <h3>name <%= user.name %></h3>
   <p>introduction <%= user.introduction %></p>
   <br>
-  <% if user == current_user %>
-    <%= link_to edit_user_path(@user) do %>
-      <button class="b-size">
-        <i class="fa-solid fa-user-gear fas_button_borderradius text-dark"></i>
-        <% end %>
-      </button>
 
-        <% end %>
+      <% if user == current_user %>
+      <%= link_to edit_user_path(@user), class: "text-dark" do %>
+      <button class="form-control fas_button_borderradius btn-block">
+
+        <i class="fa-solid fa-user-gear"></i>
+      </button>
+      <% end %>
+      <% end %>
 </div>

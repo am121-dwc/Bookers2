@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  # before_action :is_matching_login_user, only: [:edit, :update, :destroy]
+  # before_action :is_matching_login_user, only: [:edit, :update, :destroy]   (最終的には有効化)
   def new
     @book = Book.new
   end
