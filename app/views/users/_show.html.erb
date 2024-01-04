@@ -2,9 +2,22 @@
 
         <%= image_tag user.get_profile_image(100,100) %>
         <br>
-        <>
-       
 
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="col-6 col-lg-6">Name</th>
+            <th class="col-6 col-lg-6"><%= user.name %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-6 col-lg-6">Introduction</td>
+            <td class="col-6 col-lg-6"><%= user.introduction %></td>
+
+          </tr>
+        </tbody>
+      </table>
         <% if user == current_user %>
         <%= link_to edit_user_path(@user), class: "text-dark" do %>
         <button class="form-control fas_button_borderradius btn-block">
