@@ -13,8 +13,8 @@ class UsersController < ApplicationController
       flash[:notice] = "successfully. profile updated."
       redirect_to user_path(@user.id)
     else
-      flash[:alert] = "name is minimum 2 characters. introduction is maximum 50 characters."
-      redirect_to user_path(@user.id) #--要確認--
+      flash[:alert] = "error.Name is too short (minimum is 2 characters). introduction is maximum 50 characters."
+      render action: :edit
     end
 
   end

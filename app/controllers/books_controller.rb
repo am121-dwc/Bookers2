@@ -25,6 +25,7 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id)
     else
       flash[:alert] = "update error. title and body can't be blank. opinion can be up to 200 characters."
+      render action: :edit
     end
 
   end
@@ -44,7 +45,7 @@ class BooksController < ApplicationController
       flash[:notice] = "Create book is successfully."
       redirect_to book_path(@book)
     else
-      flash[:alert] = "error. Title and body can't be blank. Opinion can be up to 200 characters."
+      flash[:alert] = "error. title and body can't be blank. opinion can be up to 200 characters."
       redirect_to '/books'
     end
 
