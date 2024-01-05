@@ -4,16 +4,16 @@
 
       <h2>User info</h2>
       <%= image_tag @user.get_profile_image(100,100) %>
-       <table class="table">
+      <table class="table">
         <thead>
           <tr>
-            <th class="col-6 col-lg-6">Name</th>
+            <th class="col-6 col-lg-6">name</th>
             <th class="col-6 col-lg-6"><%= @user.name %></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="col-6 col-lg-6">Introduction</td>
+            <td class="col-6 col-lg-6">introduction</td>
             <td class="col-6 col-lg-6"><%= @user.introduction %></td>
 
           </tr>

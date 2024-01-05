@@ -2,9 +2,29 @@
   <div class="row justify-content-center d-flex">
     <div class="col-md-3">
 
-      <%= render 'users/show', user: @user %>
+      <h2>User info</h2>
+      <%= image_tag @book.user.get_profile_image(100,100) %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="col-6 col-lg-6">name</th>
+            <th class="col-6 col-lg-6"><%= @book.user.name %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-6 col-lg-6">introduction</td>
+            <td class="col-6 col-lg-6"><%= @book.user.introduction %></td>
 
-      <%= render 'new', book: @book %>
+          </tr>
+        </tbody>
+      </table>  <%= link_to edit_user_path(@book.user), class: "text-dark" do %>
+      <button class="form-control fas_button_borderradius btn-block">
+      <i class="fa-solid fa-user-gear"></i>
+      </button>
+      <% end %>
+
+      <%= render 'new', book: @book.user %>
 
     </div>
     <div class="col-md-8 offset-md-1">
