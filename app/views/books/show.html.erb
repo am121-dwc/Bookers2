@@ -10,17 +10,7 @@
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <table class="table">
-        <thead>
 
-          <tr class"row">
-            <th class="col-md-4 col-sm-4"></th>
-            <th class="col-md-2 col-sm-2"></th>
-            <th class="col-md-2 col-sm-2"></th>
-            <th class="col-md-2 col-sm-2"></th>
-            <th class="col-md-2 col-sm-2"></th>
-          </tr>
-
-        </thead>
         <tbody>
 
           <tr>
@@ -39,18 +29,22 @@
             <th>
               <%= @book.body %>
             </th>
-            <th>
+             <th>
               <% if @book.user == current_user %>
-              <button class="btn btn-success">
-                <%= link_to "Edit", edit_book_path(@book.id), class: "text-light text-decoration-none" %>
+              <%= link_to edit_book_path(@book.id) do %>
+              <button class="btn btn-success text-light text-decoration-none">
+                Edit
               </button>
+              <% end %>
               <% end %>
             </th>
             <th>
               <% if @book.user == current_user %>
-              <button class="btn btn-danger">
-                <%= link_to "Destroy", book_path(@book), class:"text-light text-decoration-none", method: :delete, "data-confirm" => "Are you sure?" %>
+              <%= link_to book_path(@book), method: :delete, "data-confirm" => "Are you sure?" do %>
+              <button class="btn btn-danger text-light text-decoration-none">
+                Destroy
               </button>
+              <% end %>
               <% end %>
 
 
